@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 480" role="img" aria-label="历史肖像待补">
+  <defs>
+    <linearGradient id="paper" x2="0" y2="1"><stop stop-color="#b9ab91"/><stop offset="1" stop-color="#554e45"/></linearGradient>
+    <radialGradient id="glow"><stop stop-color="#d4c3a2" stop-opacity=".22"/><stop offset="1" stop-color="#d4c3a2" stop-opacity="0"/></radialGradient>
+    <pattern id="grain" width="8" height="8" patternUnits="userSpaceOnUse"><path d="M0 8 8 0" stroke="#17191b" stroke-opacity=".16" stroke-width=".5"/></pattern>
+  </defs>
+  <rect width="384" height="480" fill="url(#paper)"/><rect width="384" height="480" fill="url(#glow)"/><rect width="384" height="480" fill="url(#grain)"/>
+  <path d="M36 42h312v396H36z" fill="none" stroke="#d4c3a2" stroke-opacity=".48"/>
+  <path d="M52 58h280v364H52z" fill="none" stroke="#242528" stroke-opacity=".38"/>
+  <circle cx="192" cy="202" r="60" fill="none" stroke="#d4c3a2" stroke-opacity=".35"/>
+  <path d="M106 354c13-58 42-87 86-87s73 29 86 87" fill="none" stroke="#d4c3a2" stroke-opacity=".35" stroke-width="2"/>
+  <text x="192" y="210" text-anchor="middle" fill="#eee4d2" fill-opacity=".76" font-size="29" font-family="serif">史料</text>
+  <text x="192" y="394" text-anchor="middle" fill="#eee4d2" fill-opacity=".76" font-size="16" font-family="serif" letter-spacing="4">肖像待补</text>
+</svg>

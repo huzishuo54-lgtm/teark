@@ -14,7 +14,7 @@ const STORAGE = {
   settings: 'guandao-settings',
   showcaseSeeded: 'guandao-showcase-seeded-v3',
 };
-const settingsDefaults = { apiBase: 'https://api.deepseek.com', apiModel: 'deepseek-chat', apiKey: '' };
+const settingsDefaults = { apiBase: 'https://api.deepseek.com', apiModel: 'deepseek-flash', apiKey: '' };
 const savedSettings = readLocal(STORAGE.settings, {});
 const settings = { ...settingsDefaults, apiKey: savedSettings.apiKey || '' };
 const removedPeople = new Set(readLocal(STORAGE.removedPeople, []));

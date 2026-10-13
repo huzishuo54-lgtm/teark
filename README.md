@@ -20,7 +20,7 @@ npm run preview
 
 ## 模型配置
 
-在网站的设置面板填写 DeepSeek API Key。当前模型配置为 DeepSeek V4.1 Flash；密钥和对话记录保存在当前浏览器的 `localStorage`。
+在网站的设置面板填写 DeepSeek API Key。当前模型配置为 DeepSeek Flash（deepseek-flash）；密钥和对话记录保存在当前浏览器的 `localStorage`。
 
 ## 项目结构
 

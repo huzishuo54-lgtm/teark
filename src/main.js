@@ -14,7 +14,7 @@ const STORAGE = {
   settings: 'guandao-settings',
   showcaseSeeded: 'guandao-showcase-seeded-v3',
 };
-const settingsDefaults = { apiBase: 'https://api.deepseek.com', apiModel: 'deepseek-flash', apiKey: '' };
+const settingsDefaults = { apiBase: 'https://api.openai.com/v1', apiModel: 'gpt-4o-mini', apiKey: '' };
 const savedSettings = readLocal(STORAGE.settings, {});
 const settings = { ...settingsDefaults, apiKey: savedSettings.apiKey || '' };
 const removedPeople = new Set(readLocal(STORAGE.removedPeople, []));
@@ -287,7 +287,7 @@ function buildPrompt(person, history) {
   return [{ role: 'system', content: background }, ...history.slice(-12).map(({ role, content }) => ({ role, content }))];
 }
 async function askModel(question, history, person) {
-  if (!settings.apiKey) throw new Error('请先在左下角设置中填写 DeepSeek API Key');
+  if (!settings.apiKey) throw new Error('请先在左下角设置中填写 OpenAI API Key');
   const response = await fetch(`${settingsDefaults.apiBase}/chat/completions`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${settings.apiKey}` },
@@ -366,7 +366,7 @@ async function addPerson(event) {
   const name = String(formData.get('name') || '').trim();
   if (!name) { toast('请填写人物姓名'); return; }
   if (state.people.some((person) => person.name === name)) { toast('相册中已经有这位人物'); return; }
-  if (!settings.apiKey) { toast('请先在设置中填写 DeepSeek API Key，再补全人物资料'); return; }
+  if (!settings.apiKey) { toast('请先在设置中填写 OpenAI API Key，再补全人物资料'); return; }
   const submitButton = form.querySelector('[type="submit"]');
   submitButton.disabled = true; submitButton.textContent = '正在补全资料…';
   try {
